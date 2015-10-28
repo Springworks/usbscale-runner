@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TARGET_FILE=${USBSCALE_RUNNER_TARGET_FILE}
+TARGET_FILE="/home/pi/scale/scale-result.txt"
 FILE_OWNER="pi"
 
 # Create file as correct user
