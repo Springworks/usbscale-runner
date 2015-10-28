@@ -1,5 +1,9 @@
 #!/bin/sh
 
-/home/pi/scale/usbscale/usbscale > /home/pi/scale/scale-result.txt
+TARGET_FILE="/home/pi/scale/scale-result.txt"
 
-chown pi:pi /home/pi/scale/scale-result.txt
+# Create file as correct user
+su pi -c touch ${TARGET_FILE}
+
+# Read scale result and write change to file
+/home/pi/scale/usbscale/usbscale > /home/pi/scale/scale-result.txt
