@@ -12,7 +12,8 @@ do
 
 	# Read scale result and write change to file
 	RESULT="$(/home/pi/scale/usbscale/usbscale)"
-	rm ${TARGET_FILE}
-	echo ${RESULT} > ${TARGET_FILE}
+	
+	# Empty file and wait, since change isn't necessarily detected otherwise (!)
+	> ${TARGET_FILE} ; sleep .1 ; echo ${RESULT} >> ${TARGET_FILE}
 	echo "Current weight: ${RESULT}"
 done
